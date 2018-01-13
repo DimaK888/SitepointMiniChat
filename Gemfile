@@ -29,8 +29,7 @@ gem 'turbolinks'
 gem 'thin'
 gem 'faye-rails', '~> 2.0'
 
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+gem 'omniauth-github'
 
 gem 'bootstrap-sass'
 gem 'jquery-turbolinks'

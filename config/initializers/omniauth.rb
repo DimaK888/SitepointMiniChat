@@ -1,6 +1,9 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
-           scope: 'public_profile', display: 'page', image_size: 'square'
-
-  provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET'], image_size: 'normal'
+  provider :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_SECRET'],
+           scope: "user,repo,gist",
+           client_options: {
+               site: "https://github.com",
+               authorize_url: "https://github.com/login/oauth/authorize",
+               token_url: "https://github.com/login/oauth/access_token"
+           }
 end
