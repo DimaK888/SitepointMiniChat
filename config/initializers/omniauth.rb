@@ -1,5 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_SECRET'],
+           scope: 'user,user:email,read:user',
            client_options: {
                site: "https://github.com",
                authorize_url: "https://github.com/login/oauth/authorize",
